@@ -1,11 +1,12 @@
 # SwiftCodingCheatSheet
 
-- String to Int
+- String <-> Int
 ```
 Int(str)
+"\(i)"
 ```
 
-- Array as queue
+- Array as Queue
 ```
 arr.first, arr.last
 let f = arr.removeFirst()

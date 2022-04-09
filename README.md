@@ -13,6 +13,15 @@ str.append("a") // str += "b"
 
 ```
 
+- Array
+```
+var arr3x3 = Array(repeating: [Int](repeating:1, count:3), count:3)
+var arrRow1 = arr3x3[1]
+arrRow1[1] = 2
+arr3x3[1] = arrRow1 // must set back
+// arr3x3[1][1] = 2
+```
+
 - Array as Queue
 ```
 arr.first, arr.last
@@ -75,6 +84,7 @@ for i in 1...10 {}
 for i in stride(from:0, to:10, by:2){} // 0 2 4 6 8
 for countdown in stride(from: 3, through: 0, by: -1) {} // 3 2 1 0
 for (index, element) in arr.enumerated() {}
+for (index, element) in arr.enumerated() where element > 3 {}
 
 let sum = nums.reduce(0, { x, y in
     x ^ y

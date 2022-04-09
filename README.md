@@ -1,18 +1,5 @@
 # SwiftCodingCheatSheet
 
-- String <-> Int
-```
-Int(str)
-"\(i)"
-```
-
-- String
-```
-str.count
-str.append("a") // str += "b"
-
-```
-
 - Array
 ```
 var arr3x3 = Array(repeating: [Int](repeating:1, count:3), count:3)
@@ -20,6 +7,12 @@ var arrRow1 = arr3x3[1]
 arrRow1[1] = 2
 arr3x3[1] = arrRow1 // must set back
 // arr3x3[1][1] = 2
+```
+
+- Array fast remove
+```
+arr.swapAt(index, arr.count-1)
+arr.removeLast()
 ```
 
 - Array as Queue
@@ -33,18 +26,24 @@ arr.append(e)
 arr.isEmpty
 ```
 
-- Array fast remove
-```
-arr.swapAt(index, arr.count-1)
-arr.removeLast()
-```
-
-- sub array
+- Sub Array
 ```
 // arr: [1, 2, 3, 4]
 // [3, 4]
 let rest: ArraySlice = arr.dropFirst(2) //  arr[2..<array.count] //  arr[2...array.count-1]
 let restArr = Array(rest)
+```
+
+- String
+```
+str.count
+str.append("a") // str += "b"
+```
+
+- String <-> Int
+```
+Int(str)
+"\(i)"
 ```
 
 - Dictionary
@@ -72,12 +71,13 @@ arr.randomElement()
 ```
 
 - Numbers
+
 ```
 max(4, 2, 1, 3, 5)
 min(1.0, 2.1)
 ```
 
-- Enumerate 
+- Enumeration
 
 ```
 for i in 1...10 {}

@@ -1,12 +1,15 @@
 # SwiftCodingCheatSheet
 
+<table>
+<td>
+  
 - Array
 ```
-var arr3x3 = Array(repeating: [Int](repeating:1, count:3), count:3)
+var arr3x3 = Array(repeating: [Int](0..<3), count:3)
 var arrRow1 = arr3x3[1]
-arrRow1[1] = 2
+arrRow1[1] = 4
 arr3x3[1] = arrRow1 // must set back
-// arr3x3[1][1] = 2
+// arr3x3[1][1] = 4
 ```
 
 - Array fast remove
@@ -30,7 +33,8 @@ arr.isEmpty
 ```
 // arr: [1, 2, 3, 4]
 // [3, 4]
-let rest: ArraySlice = arr.dropFirst(2) //  arr[2..<array.count] //  arr[2...array.count-1]
+var rest: ArraySlice = arr.dropFirst(2) 
+rest = arr[2..<array.count] //arr[2...array.count-1]
 let restArr = Array(rest)
 ```
 
@@ -46,6 +50,9 @@ Int(str)
 "\(i)"
 ```
 
+</td>
+<td>
+  
 - Dictionary
 ```
 var dic = [String: Int]()
@@ -82,9 +89,9 @@ min(1.0, 2.1)
 ```
 for i in 1...10 {}
 for i in stride(from:0, to:10, by:2){} // 0 2 4 6 8
-for countdown in stride(from: 3, through: 0, by: -1) {} // 3 2 1 0
-for (index, element) in arr.enumerated() {}
-for (index, element) in arr.enumerated() where element > 3 {}
+for i in stride(from: 2, through: 0, by: -1) {} // 2 1 0
+for (i, element) in arr.enumerated() {}
+for (i, element) in arr.enumerated() where element > 3 {}
 for (i, c) in str.enumerated() where c == " " {}
 
 let sum = nums.reduce(0, { x, y in
@@ -93,3 +100,5 @@ let sum = nums.reduce(0, { x, y in
 
 
 ```
+</td>  
+</table>

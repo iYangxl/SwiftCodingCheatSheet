@@ -85,6 +85,7 @@ for i in stride(from:0, to:10, by:2){} // 0 2 4 6 8
 for countdown in stride(from: 3, through: 0, by: -1) {} // 3 2 1 0
 for (index, element) in arr.enumerated() {}
 for (index, element) in arr.enumerated() where element > 3 {}
+for (i, c) in str.enumerated() where c == " " {}
 
 let sum = nums.reduce(0, { x, y in
     x ^ y

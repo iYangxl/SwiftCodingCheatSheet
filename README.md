@@ -50,7 +50,18 @@ Int(str)
 "\(i)"
 ```
 
+- Character
+```
+for (i, c) in str.enumerated() where c == " " {
+  let a = Int(c.asciiValue! /*UInt8?*/)
+}
+for c in str.unicodeScalars { 
+  let _ = Int(c.value /*UInt32*/) 
+}
+```
+  
 </td>
+<!--  -------------------------------------------------------------------------------------------------------------------------------  -->
 <td>
   
 - Dictionary
@@ -92,7 +103,6 @@ for i in stride(from:0, to:10, by:2){} // 0 2 4 6 8
 for i in stride(from: 2, through: 0, by: -1) {} // 2 1 0
 for (i, element) in arr.enumerated() {}
 for (i, element) in arr.enumerated() where element > 3 {}
-for (i, c) in str.enumerated() where c == " " {}
 
 let sum = nums.reduce(0, { x, y in
     x ^ y
@@ -100,5 +110,6 @@ let sum = nums.reduce(0, { x, y in
 
 
 ```
+  
 </td>  
 </table>

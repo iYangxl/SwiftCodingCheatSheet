@@ -42,6 +42,9 @@ let restArr = Array(rest)
 ```
 str.count
 str.append("a") // str += "b"
+// get character at index
+// str[str.index(str.startIndex, offsetBy:index)]
+let arr = Array(str); arr[index] ✅
 ```
 
 - String <-> Int
@@ -109,6 +112,21 @@ let sum = nums.reduce(0, { x, y in
 }) // nums.reduce(0, ^)
 
 
+```
+  
+- Template
+```
+func dfs(_ result: inout [[Int]], _ path: inout [Int], _ visited: inout [Bool], _ arr: [Int], _ index: Int) {
+  // if end dif condition { result.append(path); return }
+  for i in 0..<arr.count {
+      // if should filter out based on visited or index { continue; }
+      visited[i] = true
+      path.append(nums[i])
+      dfs(&result, &path, &visited, arr, i+1)
+      path.removeLast()
+      visited[i] = false
+  }
+}
 ```
   
 </td>  

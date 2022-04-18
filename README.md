@@ -63,6 +63,16 @@ for c in str.unicodeScalars {
 }
 ```
   
+- Reorder
+```
+var arr = [1, 3, 2]
+arr.sort()// mutating func sort()
+arr.sort(by: >) // [3, 2, 1] 
+let sorted = arr.sorted() // func sorted() -> [Element]
+
+reverse() / reversed() / shuffle() / shuffled() 
+```
+  
 </td>
 <!--  -------------------------------------------------------------------------------------------------------------------------------  -->
 <td>
@@ -116,10 +126,13 @@ let sum = nums.reduce(0, { x, y in
   
 - Template
 ```
-func dfs(_ result: inout [[Int]], _ path: inout [Int], _ visited: inout [Bool], _ arr: [Int], _ index: Int) {
-  // if end dif condition { result.append(path); return }
+func dfs(_ result: inout [[Int]],
+  _ path: inout [Int],
+  _ visited: inout [Bool],
+  _ arr: [Int], _ index: Int) {
+  // if end condition { result.append(path); return }
   for i in 0..<arr.count {
-      // if should filter out based on visited or index { continue; }
+      // if should filter out { continue }
       visited[i] = true
       path.append(nums[i])
       dfs(&result, &path, &visited, arr, i+1)

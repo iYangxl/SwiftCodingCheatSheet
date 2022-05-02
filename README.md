@@ -7,12 +7,12 @@
   ```
   [Int](1...3) // [1, 2, 3]
   [1, 2] + [3] // [1, 2, 3]
-
+  (arr[i], arr[j]) = (arr[j], arr[i]) // arr.swapAt(i,j)
   ```
 
 - Array fast remove
   ```
-  arr.swapAt(index, arr.count-1)
+  arr.swapAt(i, arr.count-1)
   arr.removeLast()
   ```
 
@@ -40,10 +40,11 @@
 - Sub Array
   ```
   // arr: [1, 2, 3, 4]
-  // [3, 4]
-  var rest: ArraySlice = arr.dropFirst(2) 
+  var rest: ArraySlice = arr.dropFirst(2) // [3, 4]
   rest = arr[2..<array.count] //arr[2...array.count-1]
   let restArr = Array(rest)
+  // first k subarray:
+  Array(arr[0..<k])
   ```
 
 - String
@@ -58,9 +59,27 @@
 - String <-> Int
   ```
   Int(str)
+
+  String(i)
   "\(i)"
+  
+  ```
+  
+  - String <-> Array
+  ```
+  Array(str)
+  
+  let a:[Character] = ["a", "b"]
+  String(a)
+  let b = ["a", "b"]
+  b.joined()
+  b.joined(separator: "")
   ```
 
+</td>
+<!--  -------------------------------------------------------------------------------------------------------------------------------  -->
+<td>
+  
 - Character
   ```
   for (i, c) in str.enumerated() where c == " " {
@@ -81,15 +100,17 @@
   reverse() / reversed() / shuffle() / shuffled() 
   ```
 
-</td>
-<!--  -------------------------------------------------------------------------------------------------------------------------------  -->
-<td>
-
 - Dictionary
   ```
   var dic = [String: Int]()
   if let _ = dic[key] {
     dic[key] = nil   // dic.removeValue(forKey:key)
+  }
+  dic[key, default:0] += 1
+  
+  // sort keys by value
+  let sortedKeys = dic.keys.sorted {
+      return dic[$0]! > dic[$1]!
   }
   ```
 
@@ -114,6 +135,8 @@
   ```
   max(4, 2, 1, 3, 5)
   min(1.0, 2.1)
+  Int.min
+  Int.max
   ```
 
 - Enumeration

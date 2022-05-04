@@ -1,8 +1,6 @@
   # SwiftCodingCheatSheet
 
-<table>
-<td>
-
+<table><td>
 - Array
   ```
   [Int](1...3) // [1, 2, 3]
@@ -76,10 +74,6 @@
   b.joined(separator: "")
   ```
 
-</td>
-<!--  -------------------------------------------------------------------------------------------------------------------------------  -->
-<td>
-  
 - Character
   ```
   for (i, c) in str.enumerated() where c == " " {
@@ -99,6 +93,10 @@
 
   reverse() / reversed() / shuffle() / shuffled() 
   ```
+  
+</td>
+<!--  -------------------------------------------------------------------------------------------------------------------------------  -->
+<td>
 
 - Dictionary
   ```
@@ -143,6 +141,7 @@
 
   ```
   for i in 1...10 {}
+  for i in (0..<10).reversed() {}
   for i in stride(from:0, to:10, by:2){} // 0 2 4 6 8
   for i in stride(from: 2, through: 0, by: -1) {} // 2 1 0
   for (i, element) in arr.enumerated() {}
@@ -171,7 +170,12 @@
         visited[i] = false
     }
   }
+                           
+  // Trie Node
+  class TrieNode {
+    var children = [Character: TrieNode]()
+    var isEnd = false
+  }
   ```
 
-</td>  
-</table>
+</td></table>

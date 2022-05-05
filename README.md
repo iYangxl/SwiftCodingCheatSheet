@@ -26,7 +26,7 @@
 
 - Array as Queue
   ```
-  arr.first, arr.last
+  arr.first, arr.last // Optional
   if !arr.isEmpty {
     let f = arr.removeFirst()
     //let e = arr.removeLast()
@@ -155,7 +155,7 @@
 
   ```
 
-- Template
+- Templates
   ```
   func dfs(_ result: inout [[Int]],
     _ path: inout [Int],

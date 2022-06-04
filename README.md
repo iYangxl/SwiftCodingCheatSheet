@@ -52,7 +52,7 @@
   str.append("a") // str += "b"
   // get character at index
   // str[str.index(str.startIndex, offsetBy:index)]
-  let arr = Array(str); arr[index] ✅
+  let arr = Array(str); arr[index] 
   ```
 
 - String <-> Int
@@ -177,19 +177,20 @@
     var children = [Character: TrieNode]()
     var isEnd = false
   }
-  ```
                            
-- Hashable
-```
-extension TreeNode: Hashable {
+  // Hashable                 
+  extension TreeNode: Hashable {
     public static func ==(l: TreeNode, r: TreeNode) -> Bool {
         return l === r
     }
     public func hash(into hasher: inout Hasher) {
         hasher.combine(ObjectIdentifier(self).hashValue)
     }
-}
-// var cache = [TreeNode: Int]()
-```
+  }
+  var cache = [TreeNode: Int]()
+  
+  // 151. Reverse Words in a String
+  s.split(separator: " ").reversed().joined(separator: " ")
+  ```
 
 </td></table>

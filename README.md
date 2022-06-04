@@ -84,10 +84,6 @@
     let _ = Int(c.value /*UInt32*/) 
   }
   ```
-  
-  </td>
-<!--  -------------------------------------------------------------------------------------------------------------------------------  -->
-<td>
 
 - Reorder
   ```
@@ -98,6 +94,10 @@
 
   reverse() / reversed() / shuffle() / shuffled() 
   ```
+  
+</td>
+<!--  -------------------------------------------------------------------------------------------------------------------------------  -->
+<td>
 
 - Dictionary
   ```
@@ -178,5 +178,18 @@
     var isEnd = false
   }
   ```
+                           
+- Hashable
+```
+extension TreeNode: Hashable {
+    public static func ==(l: TreeNode, r: TreeNode) -> Bool {
+        return l === r
+    }
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(ObjectIdentifier(self).hashValue)
+    }
+}
+// var cache = [TreeNode: Int]()
+```
 
 </td></table>

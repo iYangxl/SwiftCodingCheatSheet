@@ -21,7 +21,8 @@
   var arrRow1 = arr3x3[1]
   arrRow1[1] = 4
   arr3x3[1] = arrRow1 // must set back
-  // arr3x3[1][1] = 4
+  // or
+  arr3x3[1][1] = 4
   ```
 
 - Array as Queue

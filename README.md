@@ -192,6 +192,16 @@
   
   // 151. Reverse Words in a String
   s.split(separator: " ").reversed().joined(separator: " ")
+  
+  // monotonic stack (next greater element)
+  var maxQueue = [Int](), result = [Int](repeating:-1, count:nums.count)
+  for (i, num) in nums.enumerated() {
+      while (!maxQueue.isEmpty && num > nums[maxQueue.last!]) {
+          result[maxQueue.last!] = num
+          maxQueue.removeLast()
+      }
+      maxQueue.append(i)
+  }
   ```
 
 </td></table>

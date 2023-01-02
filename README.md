@@ -148,7 +148,7 @@
   for i in stride(from: 2, through: 0, by: -1) {} // 2 1 0
   for (i, element) in arr.enumerated() {}
   for (i, element) in arr.enumerated() where element > 3 {}
-
+  for (value, char) in zip(65...66, ["A", "B", "C"]) {} // (65, A) (66, B)
   let sum = nums.reduce(0, { x, y in
       x ^ y
   }) // nums.reduce(0, ^)

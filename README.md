@@ -194,13 +194,13 @@
   s.split(separator: " ").reversed().joined(separator: " ")
   
   // monotonic stack (next greater element)
-  var maxQueue = [Int](), result = [Int](repeating:-1, count:nums.count)
+  var maxStack = [Int](), result = [Int](repeating:-1, count:nums.count)
   for (i, num) in nums.enumerated() {
-      while (!maxQueue.isEmpty && num > nums[maxQueue.last!]) {
-          result[maxQueue.last!] = num
-          maxQueue.removeLast()
+      while (!maxStack.isEmpty && num > nums[maxStack.last!]) {
+          result[maxStack.last!] = num
+          maxStack.removeLast()
       }
-      maxQueue.append(i)
+      maxStack.append(i)
   }
   ```
 
